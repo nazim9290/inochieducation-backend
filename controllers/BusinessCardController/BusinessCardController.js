@@ -14,9 +14,7 @@ const getBusinessAllUser = async (req, res) => {
 const getBusinessUserById = async (req, res) => {
 	console.log(req.params.id)
 	try {
-		const result = await businessCardUser.find({
-			profileID: `${req.params.id}`
-		});
+		const result = await businessCardUser.findOne({ profileID: `${req.params.id}` });
 		console.log(result)
 		res.status(200).json(result);
 	} catch (error) {
