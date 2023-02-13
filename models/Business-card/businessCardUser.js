@@ -10,6 +10,9 @@ const businessCardUserSchema = new mongoose.Schema({
 	profileID: {
 		type: String
 	},
+	title: {
+		type: String
+	},
 	image: {
 		type: String
 	},

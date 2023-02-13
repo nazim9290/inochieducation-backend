@@ -11,6 +11,15 @@ const getBusinessAllUser = async (req, res) => {
 	}
 };
 
+const getBusinessAllUserID = async (req, res) => {
+	try {
+		const result = await businessCardUser.find({}, '_id');
+		res.status(200).json(result);
+	} catch (error) {
+		res.status(404).json({ message: error.message });
+	}
+};
+
 const getBusinessUserById = async (req, res) => {
 	console.log(req.params.id)
 	try {
@@ -33,4 +42,4 @@ const insertBusinessUser = async (req, res) => {
 };
 
 module.exports = router;
-module.exports = { getBusinessAllUser, insertBusinessUser, getBusinessUserById };
+module.exports = { getBusinessAllUser, insertBusinessUser, getBusinessUserById, getBusinessAllUserID };
