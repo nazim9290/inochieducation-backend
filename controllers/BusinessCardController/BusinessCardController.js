@@ -14,7 +14,9 @@ const getBusinessAllUser = async (req, res) => {
 const getBusinessAllUserID = async (req, res) => {
 	try {
 		const result = await businessCardUser.find({}, '_id');
+		console.log(result);
 		res.status(200).json(result);
+
 	} catch (error) {
 		res.status(404).json({ message: error.message });
 	}
